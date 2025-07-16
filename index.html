@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battery Aadhaar - TACO 12.1 kWh</title>
+    <title>Battery Aadhaar - EULER 30.72 kWh</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #FF8C00 0%, #FFFFFF 30%, #32CD32 70%, #FF8C00 100%);
@@ -19,11 +20,13 @@
             padding: 20px;
             color: #333;
         }
+
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -33,10 +36,12 @@
             overflow: hidden;
             animation: fadeIn 0.8s ease-out;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
         .header {
             background: linear-gradient(135deg, #FF8C00 0%, #FFFFFF 50%, #32CD32 100%);
             color: #2c3e50;
@@ -46,6 +51,7 @@
             overflow: hidden;
             border-bottom: 5px solid #FF8C00;
         }
+
         .header::before {
             content: '';
             position: absolute;
@@ -56,6 +62,7 @@
             background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
+
         .logo-container {
             position: absolute;
             top: 0;
@@ -70,6 +77,7 @@
             z-index: 10;
             padding: 0 16px;
         }
+
         .arai-logo,
         .make-in-india-logo {
             position: relative;
@@ -92,8 +100,10 @@
             top: 20px;
             animation: logoFloat 3s ease-in-out infinite;
         }
+
         .arai-logo { left: 0; }
         .make-in-india-logo { right: 0; }
+
         .arai-logo img,
         .make-in-india-logo img {
             width: 100%;
@@ -102,10 +112,12 @@
             border-radius: 10px;
             display: block;
         }
+
         .arai-logo::before, .make-in-india-logo::before,
         .arai-logo-text, .arai-logo-subtext {
             display: none !important;
         }
+
         .make-in-india-logo img {
             width: 100%;
             height: 100%;
@@ -113,18 +125,22 @@
             border-radius: 10px;
             display: block;
         }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-5px); }
         }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
+
         @keyframes logoFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
         }
+
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
@@ -134,6 +150,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             margin-top: 40px;
         }
+
         .header .subtitle {
             font-size: 1.2rem;
             opacity: 0.8;
@@ -142,6 +159,7 @@
             color: #34495e;
             font-weight: 600;
         }
+
         .passport-id {
             background: linear-gradient(135deg, #fff5f5 0%, #f0f8ff 100%);
             padding: 20px;
@@ -151,11 +169,13 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .passport-id h2 {
             color: #2c3e50;
             margin-bottom: 10px;
             font-size: 1.5rem;
         }
+
         .passport-id .id-number {
             display: flex;
             align-items: center;
@@ -163,6 +183,7 @@
             overflow: hidden;
             white-space: nowrap;
         }
+
         .aadhaar-number {
             font-family: 'Courier New', monospace;
             font-size: 1.1rem;
@@ -181,15 +202,18 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
         .toggle-visibility {
             cursor: pointer;
             margin-left: 10px;
             vertical-align: middle;
             user-select: none;
         }
+
         .content {
             padding: 40px;
         }
+
         .section {
             margin-bottom: 40px;
             background: linear-gradient(135deg, #fff8f0 0%, #f0fff0 100%);
@@ -202,6 +226,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .section::before {
             content: '';
             position: absolute;
@@ -212,29 +237,33 @@
             background: linear-gradient(90deg, #FF8C00 0%, #FFFFFF 50%, #32CD32 100%);
             border-radius: 15px 15px 0 0;
         }
+
         .section:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             border-color: #FF8C00;
         }
+
         .section h3 {
             color: #2c3e50;
             font-size: 1.4rem;
             margin-bottom: 20px;
             border-bottom: 3px solid transparent;
-            background: linear-gradient(90deg, #FF8C00, #32CD32) padding-box,
-                        linear-gradient(90deg, #FF8C00, #32CD32) border-box;
+            background: linear-gradient(90deg, #FF8C00, #32CD32) padding-box, 
+                       linear-gradient(90deg, #FF8C00, #32CD32) border-box;
             border-bottom: 3px solid;
             border-image: linear-gradient(90deg, #FF8C00, #32CD32) 1;
             padding-bottom: 10px;
             margin-top: 15px;
         }
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 20px;
         }
+
         .info-item {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 15px;
@@ -244,21 +273,25 @@
             transition: all 0.3s ease;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
+
         .info-item:hover {
             border-left-color: #32CD32;
             border-right-color: #FF8C00;
             transform: translateX(5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .info-item strong {
             color: #2c3e50;
             display: block;
             margin-bottom: 5px;
         }
+
         .info-item span {
             color: #666;
             font-size: 0.95rem;
         }
+
         .status-badge {
             display: inline-block;
             background: linear-gradient(45deg, #32CD32, #228B22);
@@ -270,16 +303,19 @@
             margin-top: 10px;
             box-shadow: 0 3px 10px rgba(50, 205, 50, 0.3);
         }
+
         .warning-badge {
             background: linear-gradient(45deg, #FF8C00, #FF6347);
             box-shadow: 0 3px 10px rgba(255, 140, 0, 0.3);
         }
+
         .material-composition {
             background: #ecf0f1;
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
         }
+
         .composition-item {
             display: flex;
             justify-content: space-between;
@@ -292,10 +328,12 @@
             border-right: 2px solid #32CD32;
             transition: all 0.3s ease;
         }
+
         .composition-item:hover {
             transform: translateX(3px);
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
+
         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #FF8C00 50%, #32CD32 100%);
             color: white;
@@ -305,6 +343,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .footer::before {
             content: '';
             position: absolute;
@@ -315,31 +354,36 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             animation: shine 3s infinite;
         }
+
         @keyframes shine {
             0% { left: -100%; }
             100% { left: 100%; }
         }
+
         .carbon-footprint {
             background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
             border-left: 4px solid #27ae60;
         }
+
         .dynamic-data {
             background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
             border-left: 4px solid #ff9800;
         }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
             }
-                        
+            
             .content {
                 padding: 20px;
             }
-                        
+            
             .info-grid {
                 grid-template-columns: 1fr;
             }
         }
+
         @media (max-width: 600px) {
             .logo-container {
                 height: 60px;
@@ -356,6 +400,7 @@
                 top: 8px;
             }
         }
+
         .section-content {
             max-height: 0;
             overflow: hidden;
@@ -393,297 +438,294 @@
     </style>
 </head>
 <body>
- <div class="container">
-    <div class="header">
-        <div class="logo-container">
-            <div class="arai-logo">
-                <img src="https://heavyindustries.gov.in/sites/default/files/2023-10/arai-header-img_0.png" alt="ARAI Logo" />
-            </div>
-            <div class="make-in-india-logo">
-                <img src="https://digest.myhq.in/wp-content/uploads/2022/12/make-in-india-dream.jpg" alt="Make in India Logo" />
-            </div>
-        </div>
-        <h1>🔋Battery Aadhaar</h1>
-        <p class="subtitle">Digital Identity for Batteries</p>
-    </div>
-    
-    <div class="passport-id">
-        <h2>Battery Aadhaar Number</h2>
-        <div class="id-number">
-            <span class="aadhaar-number hidden">•••••••••••••••••••••••••••••</span>
-            <span class="toggle-visibility" style="cursor:pointer; margin-left:10px; vertical-align:middle; user-select:none;">
-                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>
-            </span>
-        </div>
-    </div>
-    
-    <div class="content">
-        <!-- General Information Section -->
-        <div class="section">
-            <div class="section-header">
-                <span>🌍 General Information</span>
-                <span class="arrow" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-            </div>
-            <div class="section-content">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Country/Region:</strong>
-                        <span>India, Asia Region</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Manufacturer:</strong>
-                        <span>Tata AutoComp Systems Ltd.</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Manufacturer Code:</strong>
-                        <span>MA003</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Unique Serial Number:</strong>
-                        <span>8VSQ8S3FD</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Manufacturing Date:</strong>
-                        <span>11/06/2024</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Factory Code:</strong>
-                        <span>HB</span>
-                    </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="arai-logo">
+                    <img src="https://heavyindustries.gov.in/sites/default/files/2023-10/arai-header-img_0.png" alt="ARAI Logo" />
                 </div>
+                <div class="make-in-india-logo">
+                    <img src="https://digest.myhq.in/wp-content/uploads/2022/12/make-in-india-dream.jpg" alt="Make in India Logo" />
+                </div>
+            </div>
+            <h1>🔋Battery Aadhaar</h1>
+            <p class="subtitle">Digital Identity for Batteries</p>
+        </div>
+
+        <div class="passport-id">
+            <h2>Battery Aadhaar Number</h2>
+            <div class="id-number">
+                <span class="aadhaar-number hidden">•••••••••••••••••••••••••••••</span>
+                <span class="toggle-visibility" style="cursor:pointer; margin-left:10px; vertical-align:middle; user-select:none;">
+                    <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>
+                </span>
             </div>
         </div>
 
-        <!-- Technical Specifications Section -->
-        <div class="section">
-            <div class="section-header">
-                <span>⚡ Technical Specifications</span>
-                <span class="arrow" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-            </div>
-            <div class="section-content">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Battery Chemistry:</strong>
-                        <span>LFP (Lithium Iron Phosphate)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Cell Type:</strong>
-                        <span>Cylindrical</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Total Energy:</strong>
-                        <span>12.124 kWh</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Nominal Voltage:</strong>
-                        <span>51.2 V</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Battery Weight:</strong>
-                        <span>105±5% kg</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Number of Cells:</strong>
-                        <span>256 cells (16P 8S)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Rated Capacity:</strong>
-                        <span>236.8 Ah</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Battery Warranty:</strong>
-                        <span>5-8 years</span>
+        <div class="content">
+            <!-- General Information Section -->
+            <div class="section">
+                <div class="section-header">
+                    <span>🌍 General Information</span>
+                    <span class="arrow" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Country/Region:</strong>
+                            <span>India, Asia Region</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Manufacturer:</strong>
+                            <span>Euler Motors Pvt. Ltd.</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Manufacturer Code:</strong>
+                            <span>MY008</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Unique Serial Number:</strong>
+                            <span>8VK02YYAX</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Manufacturing Date:</strong>
+                            <span>17/04/2025</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Factory Code:</strong>
+                            <span>08</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Material Composition Section -->
-        <div class="section">
-            <div class="section-header">
-                <span>🧪 Material Composition</span>
-                <span class="arrow" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-            </div>
-            <div class="section-content">
-                <div class="material-composition">
-                    <h4>Battery Material Composition Section (BMCS)</h4>
-                    <div class="composition-item">
-                        <strong>Anode Material:</strong>
-                        <span>Graphite</span>
-                    </div>
-                    <div class="composition-item">
-                        <strong>Cathode Material:</strong>
-                        <span>LiFePO4 - Lithium Iron Phosphate</span>
-                    </div>
-                    <div class="composition-item">
-                        <strong>Electrolyte:</strong>
-                        <span>LiPF6 - Lithium Hexafluorophosphate</span>
-                    </div>
-                    <div class="composition-item">
-                        <strong>Separator:</strong>
-                        <span>Polyethylene (PE)</span>
-                    </div>
-                    <div class="composition-item">
-                        <strong>Current Collector:</strong>
-                        <span>Anode - Copper Foil, Cathode - Aluminium Foil</span>
-                    </div>
+            <!-- Technical Specifications Section -->
+            <div class="section">
+                <div class="section-header">
+                    <span>⚡ Technical Specifications</span>
+                    <span class="arrow" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
                 </div>
-                <h4>Material Content Percentages</h4>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Lithium:</strong>
-                        <span>0.5 - 1.0%</span>
+                <div class="section-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Battery Chemistry:</strong>
+                            <span>LFP (Lithium Iron Phosphate)</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Cell Type:</strong>
+                            <span>Prismatic</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Cell Origin:</strong>
+                            <span>KL-Korea</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Total Energy:</strong>
+                            <span>30.72 kWh</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Nominal Voltage:</strong>
+                            <span>307.2 V</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Battery Weight:</strong>
+                            <span>420 kg</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Number of Cells:</strong>
+                            <span>96 cells (96S 1P)</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Rated Capacity:</strong>
+                            <span>100 Ah</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Battery Warranty:</strong>
+                            <span>9 years</span>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <strong>Iron (Fe):</strong>
-                        <span>10 - 15%</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Phosphorus:</strong>
-                        <span>3 - 5%</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Other Materials:</strong>
-                        <span>Carbon: 8-12%, Aluminum: 15-25%, Copper: 10-15%</span>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <strong>Recyclability:</strong>
-                    <span>80-85%</span>
-                    <div class="status-badge">♻ Recyclable</div>
                 </div>
             </div>
-        </div>
+<span>🧪 Material Composition</span>
+                    <span class="arrow" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <div class="material-composition">
+                        <h4>Battery Material Composition Section (BMCS)</h4>
+                        <div class="composition-item">
+                            <strong>Anode Material:</strong>
+                            <span>Graphite</span>
+                        </div>
+                        <div class="composition-item">
+                            <strong>Cathode Material:</strong>
+                            <span>LiFePO4 - Lithium Iron Phosphate</span>
+                        </div>
+                        <div class="composition-item">
+                            <strong>Electrolyte:</strong>
+                            <span>LiBF4 - Lithium Tetrafluoroborate</span>
+                        </div>
+                        <div class="composition-item">
+                            <strong>Separator:</strong>
+                            <span>Polypropylene (PP)</span>
+                        </div>
+                        <div class="composition-item">
+                            <strong>Current Collector:</strong>
+                            <span>Anode - Copper Foil, Cathode - Aluminium Foil</span>
+                        </div>
+                    </div>
+                    <h4>Material Content Percentages</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Lithium:</strong>
+                            <span>10 - 15%</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Iron (Fe):</strong>
+                            <span>20 - 30%</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Nickel:</strong>
+                            <span>5%</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Graphite:</strong>
+                            <span>10 - 20%</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <strong>Recyclability:</strong>
+                        <span>65-75%</span>
+                        <div class="status-badge">♻ Recyclable</div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Carbon Footprint Section -->
-        <div class="section carbon-footprint">
-            <div class="section-header">
-                <span>🌱 Battery Carbon Footprint (BCF)</span>
-                <span class="arrow" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-            </div>
-            <div class="section-content">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Raw Material Acquisition:</strong>
-                        <span>50 kg CO2e (50-60%)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Manufacturing Stage:</strong>
-                        <span>20 kg CO2e (35-50%)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Distribution Stage:</strong>
-                        <span>10 kg CO2e (2-5%)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>End of Life & Recycling:</strong>
-                        <span>50 kg CO2e (Net: -30 kg CO2e credit)</span>
+            <!-- Carbon Footprint Section -->
+            <div class="section carbon-footprint">
+                <div class="section-header">
+                    <span>🌱 Battery Carbon Footprint (BCF)</span>
+                    <span class="arrow" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Raw Material Acquisition:</strong>
+                            <span>50-60% kg CO2e</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Manufacturing Stage:</strong>
+                            <span>35-50% kg CO2e</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Distribution Stage:</strong>
+                            <span>2-5% kg CO2e</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>End of Life & Recycling:</strong>
+                            <span>NA</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Dynamic Data Section -->
-        <div class="section dynamic-data">
-            <div class="section-header">
-                <span>📊 Battery Dynamic Data (BDD)</span>
-                <span class="arrow" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-            </div>
-            <div class="section-content">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Battery Status:</strong>
-                        <span>Operational</span>
-                        <div class="status-badge">✅ Operational</div>
-                    </div>
-                       <div class="info-item">
+            <!-- Dynamic Data Section -->
+            <div class="section dynamic-data">
+                <div class="section-header">
+                    <span>📊 Battery Dynamic Data (BDD)</span>
+                    <span class="arrow" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+                <div class="section-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Battery Status:</strong>
+                            <span>Operational</span>
+                            <div class="status-badge">✅ Operational</div>
+                        </div>
+                         <div class="info-item">
                             <strong>Battery Category:</strong>
                             <span>Automotive Battery</span>
                         </div>
-                    <div class="info-item">
-                        <strong>Power Capability Ratio:</strong>
-                        <span>NA (between 80% & 20% SoC)</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Original Power at 80% SoC:</strong>
-                        <span>9</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Original Power at 20% SoC:</strong>
-                        <span>3</span>
+
+                        <div class="info-item">
+                            <strong>Power Capability Ratio:</strong>
+                            <span>50% (between 80% & 20% SoC)</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Original Power at 80% SoC:</strong>
+                            <span>24</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Original Power at 20% SoC:</strong>
+                            <span>6</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Battery Aadhaar System | Digital Identity for Sustainable Batteries</p>
+            <p>Compliant with Global Battery Alliance Standards</p>
+        </div>
     </div>
-    
-    <div class="footer">
-        <p>&copy; 2025 Battery Aadhaar System | Digital Identity for Sustainable Batteries</p>
-        <p>Compliant with Global Battery Alliance Standards</p>
-    </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.section').forEach(section => {
-            section.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.section').forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
             });
-            section.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
+
+            const aadhaarNumber = document.querySelector('.aadhaar-number');
+            const toggle = document.querySelector('.toggle-visibility');
+            const eyeSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>';
+            const eyeOffSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="4" y1="20" x2="20" y2="4"/></svg>';
+            const realNumber = 'MY008 2KL16361J5 8VK02YYAX';
+            const hiddenDots = '•••••••••••••••'; // 15 dots
+            let visible = false;
+
+            aadhaarNumber.classList.add('hidden'); // Start hidden
+            toggle.addEventListener('click', function() {
+                visible = !visible;
+                aadhaarNumber.textContent = visible ? realNumber : hiddenDots;
+                toggle.innerHTML = visible ? eyeOffSVG : eyeSVG;
+                aadhaarNumber.classList.toggle('hidden', !visible);
             });
-        });
 
-        const aadhaarNumber = document.querySelector('.aadhaar-number');
-        const toggle = document.querySelector('.toggle-visibility');
-        const eyeSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>';
-        const eyeOffSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="4" y1="20" x2="20" y2="4"/></svg>';
-        
-        const realNumber = 'MA003 116241HB 8VSQ8S3FD';
-        const hiddenDots = '•••••••••••••••••••••••••••••';
-        let visible = false;
-
-        aadhaarNumber.classList.add('hidden');
-
-        toggle.addEventListener('click', function() {
-            visible = !visible;
-            aadhaarNumber.textContent = visible ? realNumber : hiddenDots;
-            toggle.innerHTML = visible ? eyeOffSVG : eyeSVG;
-            aadhaarNumber.classList.toggle('hidden', !visible);
-        });
-
-        // Dropdown logic for sections
-        document.querySelectorAll('.section-header').forEach(header => {
-            header.setAttribute('tabindex', '0');
-            header.setAttribute('role', 'button');
-            header.setAttribute('aria-expanded', 'false');
-            header.addEventListener('click', toggleSection);
-            header.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleSection.call(this);
-                }
+            // Dropdown logic for sections
+            document.querySelectorAll('.section-header').forEach(header => {
+                header.setAttribute('tabindex', '0');
+                header.setAttribute('role', 'button');
+                header.setAttribute('aria-expanded', 'false');
+                header.addEventListener('click', toggleSection);
+                header.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleSection.call(this);
+                    }
+                });
             });
-        });
 
-       function toggleSection() {
-        const section = this.closest('.section');
-        const expanded = section.classList.toggle('open');
-        this.setAttribute('aria-expanded', expanded);
-    }
-});
-</script>
+            function toggleSection() {
+                const section = this.closest('.section');
+                const expanded = section.classList.toggle('open');
+                this.setAttribute('aria-expanded', expanded);
+            }
+        });
+    </script>
 </body>
 </html>
-
-
