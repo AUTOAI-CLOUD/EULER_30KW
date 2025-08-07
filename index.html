@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Battery Aadhaar - EULER 30.72 kWh</title>
     <style>
         * {
@@ -260,6 +260,12 @@
             transform: translateX(3px);
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
+        /* Special styling for Graphite to improve visibility */
+        .anode-material strong, .anode-material span {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1rem;
+        }
         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #FF8C00 50%, #32CD32 100%);
             color: white;
@@ -349,6 +355,20 @@
         .section.open .arrow {
             transform: rotate(90deg);
         }
+
+        /* Improved spacing and alignment for Battery Material Composition Section (BMCS) */
+        .section:nth-of-type(3) .info-item,
+        .section:nth-of-type(3) .composition-item {
+            margin-bottom: 12px; /* Adds vertical spacing */
+        }
+        .section:nth-of-type(3) .composition-item {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .section:nth-of-type(3) h4 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -366,7 +386,7 @@
                     <img src="https://heavyindustries.gov.in/sites/default/files/2023-10/arai-header-img_0.png" alt="ARAI Logo" />
                 </div>
             </div>
-              <h1>🔋Battery Aadhaar</h1>
+            <h1>🔋Battery Aadhaar</h1>
             <p class="subtitle">Digital Identity for Batteries</p>
         </div>
 
@@ -405,7 +425,7 @@
                         </div>
                         <div class="info-item">
                             <strong>Unique Serial Number:</strong>
-                            <span>8VK02YYAX</span>
+                            <span>1DJ800001</span>
                         </div>
                         <div class="info-item">
                             <strong>Manufacturing Date:</strong>
@@ -422,7 +442,7 @@
             <!-- Technical Specifications Section -->
             <div class="section">
                 <div class="section-header">
-                    <span>⚡Battery Descriptor Section</span>
+                    <span>⚡Battery Descriptor Section (BDS)</span>
                     <span class="arrow" aria-hidden="true">
                         <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
@@ -430,20 +450,12 @@
                 <div class="section-content">
                     <div class="info-grid">
                         <div class="info-item">
-                            <strong>Battery Chemistry:</strong>
-                            <span>LFP (Lithium Iron Phosphate)</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Cell Type:</strong>
-                            <span>Prismatic</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Cell Origin:</strong>
-                            <span>KL-Korea</span>
-                        </div>
-                        <div class="info-item">
                             <strong>Total Energy:</strong>
                             <span>30.72 kWh</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Battery Chemistry:</strong>
+                            <span>LFP (Lithium Iron Phosphate)</span>
                         </div>
                         <div class="info-item">
                             <strong>Nominal Voltage:</strong>
@@ -454,16 +466,25 @@
                             <span>420 kg</span>
                         </div>
                         <div class="info-item">
-                            <strong>Number of Cells:</strong>
-                            <span>96 cells (96S 1P)</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Rated Capacity:</strong>
-                            <span>100 Ah</span>
-                        </div>
-                        <div class="info-item">
                             <strong>Battery Warranty:</strong>
                             <span>9 years</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Cell Type:</strong>
+                            <span>Prismatic</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Cell Origin:</strong>
+                            <span>KL-Korea</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Number of Cells:</strong>
+                            <span>96 cells</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Power capability ratio between 80% & 20% SoC
+    :</strong>
+                            <span>50%</span>
                         </div>
                     </div>
                 </div>
@@ -472,15 +493,26 @@
             <!-- Material Composition Section -->
             <div class="section">
                 <div class="section-header">
-                    <span>🧪 Material Composition</span>
+                    <span>🧪 Battery Material Composition Section (BMCS)</span>
                     <span class="arrow" aria-hidden="true">
                         <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
                 </div>
                 <div class="section-content">
+                    <div class="info-item">
+                        <strong>TAC Number:</strong>
+                        <span> AP5184 </span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Recyclability:</strong>
+                        <span>65-75%</span>
+                        <div class="status-badge">♻ Recyclable</div>
+                    </div>
+
                     <div class="material-composition">
-                        <h4>Battery Material Composition Section (BMCS)</h4>
-                        <div class="composition-item">
+                        <h4>Battery Material Composition</h4>
+                        <div class="composition-item anode-material">
                             <strong>Anode Material:</strong>
                             <span>Graphite</span>
                         </div>
@@ -500,8 +532,23 @@
                             <strong>Current Collector:</strong>
                             <span>Anode - Copper Foil, Cathode - Aluminium Foil</span>
                         </div>
+                        <div class="composition-item">
+                            <strong>Battery Casing:</strong>
+                            <span>Aluminium</span>
+                        </div>
                     </div>
-                    <h4>Material Content Percentages</h4>
+
+                    <div class="info-item">
+                        <strong>Original Power at 80% SoC:</strong>
+                        <span>24 kWh</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Original Power at 20% SoC:</strong>
+                        <span>6 kWh</span>
+                    </div>
+
+                    <h4>Material Content </h4>
                     <div class="info-grid">
                         <div class="info-item">
                             <strong>Lithium:</strong>
@@ -519,31 +566,14 @@
                             <strong>Graphite:</strong>
                             <span>10 - 20%</span>
                         </div>
-                    </div>
-                    <div class="info-item">
-                        <strong>Recyclability:</strong>
-                        <span>65-75%</span>
-                        <div class="status-badge">♻ Recyclable</div>
-                    </div>
-                     <div class="info-item">
-                            <strong>Original Power at 80% SoC:</strong>
-                            <span>24</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Original Power at 20% SoC:</strong>
-                            <span>6</span>
-                        </div>
-                           <div class="info-item">
-                            <strong>Power Capability Ratio:</strong>
-                            <span>50% (between 80% & 20% SoC)</span>
-                        </div>
+                    </div>        
                 </div>
             </div>
 
             <!-- Carbon Footprint Section -->
             <div class="section carbon-footprint">
                 <div class="section-header">
-                    <span>🌱 Battery Carbon Footprint</span>
+                    <span>🌱 Battery Carbon Footprint (BCF)</span>
                     <span class="arrow" aria-hidden="true">
                         <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
@@ -552,15 +582,15 @@
                     <div class="info-grid">
                         <div class="info-item">
                             <strong>Raw Material Acquisition:</strong>
-                            <span>50-60% kg CO2e</span>
+                            <span>50% kg CO2e</span>
                         </div>
                         <div class="info-item">
                             <strong>Manufacturing Stage:</strong>
-                            <span>35-50% kg CO2e</span>
+                            <span>35% kg CO2e</span>
                         </div>
                         <div class="info-item">
                             <strong>Distribution Stage:</strong>
-                            <span>2-5% kg CO2e</span>
+                            <span>5% kg CO2e</span>
                         </div>
                         <div class="info-item">
                             <strong>End of Life & Recycling:</strong>
@@ -569,126 +599,104 @@
                     </div>
                 </div>
             </div>
+
             <!-- Dynamic Data Section -->
             <div class="section dynamic-data">
-                <div class="section-header">
+                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
                     <span>📊 Battery Dynamic Data</span>
                     <span class="arrow" aria-hidden="true">
                         <svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </span>
                 </div>
-               <div class="section-content">
+                <div class="section-content">
                     <div class="info-grid">
-                         <!--<div class="info-item">
-                            <strong>Battery Status:</strong>
-                            <span>Operational</span>
-                            <div class="status-badge">✅ Operational</div>
-                        </div>
-                        <div class="info-item">
-                            <strong>Battery Category:</strong>
-                            <span>Automotive Battery</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Power Capability Ratio:</strong>
-                            <span>55% (between 80% & 20% SoC)</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Original Power at 80% SoC:</strong>
-                            <span>20 kWh</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>Original Power at 20% SoC:</strong>
-                            <span>5 kWh</span>
-                        </div> 
-                    </div>-->
+                        <!-- Dynamic Data content intentionally left blank for external link -->
+                    </div>
                 </div> 
             </div>
         </div> 
+
         <div class="footer">
             <p>&copy; 2025 Battery Aadhaar System | Digital Identity for Sustainable Batteries</p>
             <p>Compliant with Global Battery Alliance Standards</p>
         </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    // Add some interactive effects
-    document.querySelectorAll('.section').forEach(section => {
-        section.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        section.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
+            // Add some interactive effects
+            document.querySelectorAll('.section').forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
 
-    // Aadhaar number privacy toggle
-    const aadhaarNumber = document.querySelector('.aadhaar-number');
-    const toggle = document.querySelector('.toggle-visibility');
-    const eyeSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>';
-    const eyeOffSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="4" y1="20" x2="20" y2="4"/></svg>';
-   const realNumber = 'MY008 2KL16361J5 8VK02YYAX';
+            // Aadhaar number privacy toggle
+            const aadhaarNumber = document.querySelector('.aadhaar-number');
+            const toggle = document.querySelector('.toggle-visibility');
+            const eyeSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>';
+            const eyeOffSVG = '<svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="4" y1="20" x2="20" y2="4"/></svg>';
+            const realNumber = 'MY008  A66JPNKJ2KLAC6BS  1DJ800001';
             const hiddenDots = '•••••••••••••••'; // 15 dots
-    let visible = false;
+            let visible = false;
 
-    aadhaarNumber.classList.add('hidden'); // Start hidden
+            aadhaarNumber.classList.add('hidden'); // Start hidden
+            aadhaarNumber.textContent = hiddenDots;
 
-    toggle.addEventListener('click', function() {
-        visible = !visible;
-        aadhaarNumber.textContent = visible ? realNumber : hiddenDots;
-        toggle.innerHTML = visible ? eyeOffSVG : eyeSVG;
-        aadhaarNumber.classList.toggle('hidden', !visible);
-    });
-
-    // Dropdown logic for sections (excluding dynamic-data section)
-    document.querySelectorAll('.section-header').forEach(header => {
-        const section = header.closest('.section');
-        
-        // Special handling for dynamic-data section
-        if (section.classList.contains('dynamic-data')) {
-            header.setAttribute('tabindex', '0');
-            header.setAttribute('role', 'button');
-            header.style.cursor = 'pointer';
-            
-            header.addEventListener('click', function() {
-                window.open('https://autoai-cloud.github.io/Dynamic_30/', '_blank');
+            toggle.addEventListener('click', function() {
+                visible = !visible;
+                aadhaarNumber.textContent = visible ? realNumber : hiddenDots;
+                toggle.innerHTML = visible ? eyeOffSVG : eyeSVG;
+                aadhaarNumber.classList.toggle('hidden', !visible);
             });
-            
-            header.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    window.open('https://autoai-cloud.github.io/Dynamic_30/', '_blank');
+
+            // Dropdown logic for sections (excluding dynamic-data section)
+            document.querySelectorAll('.section-header').forEach(header => {
+                const section = header.closest('.section');
+                if (section.classList.contains('dynamic-data')) {
+                    header.setAttribute('tabindex', '0');
+                    header.setAttribute('role', 'button');
+                    header.style.cursor = 'pointer';
+
+                    header.addEventListener('click', function() {
+                        window.open('https://autoai-cloud.github.io/Dynamic_30/', '_blank');
+                    });
+
+                    header.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            window.open('https://autoai-cloud.github.io/Dynamic_30/', '_blank');
+                        }
+                    });
+                } else {
+                    header.setAttribute('tabindex', '0');
+                    header.setAttribute('role', 'button');
+                    header.setAttribute('aria-expanded', 'false');
+                    header.addEventListener('click', toggleSection);
+                    header.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleSection.call(this);
+                        }
+                    });
                 }
             });
-        } else {
-            // Normal dropdown behavior for other sections
-            header.setAttribute('tabindex', '0');
-            header.setAttribute('role', 'button');
-            header.setAttribute('aria-expanded', 'false');
-            header.addEventListener('click', toggleSection);
-            header.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleSection.call(this);
+
+            function toggleSection() {
+                const section = this.closest('.section');
+                const isOpen = section.classList.contains('open');
+                document.querySelectorAll('.section.open').forEach(s => s.classList.remove('open'));
+                if (!isOpen) {
+                    section.classList.add('open');
+                    this.setAttribute('aria-expanded', true);
+                } else {
+                    this.setAttribute('aria-expanded', false);
                 }
-            });
-        }
-    });
-
-    function toggleSection() {
-        const section = this.closest('.section');
-        const isOpen = section.classList.contains('open');
-        document.querySelectorAll('.section.open').forEach(s => s.classList.remove('open'));
-        if (!isOpen) {
-            section.classList.add('open');
-            this.setAttribute('aria-expanded', true);
-        } else {
-            this.setAttribute('aria-expanded', false);
-        }
-    }
-
-
+            }
         });
     </script>
 </body>
 </html>
-
