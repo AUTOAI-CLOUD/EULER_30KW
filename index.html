@@ -23,29 +23,38 @@
             50% { background-position: 100% 50%; }
         }
         
-        .tricolor-badge {
-            position: fixed; top: 100px; right: 20px; z-index: 999;
-            display: flex; flex-direction: column; border-radius: 12px;
-            overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            animation: badgePulse 3s ease-in-out infinite;
-            min-width: 160px;
-        }
+      .tricolor-badge {
+    position: fixed; 
+    top: 100px; 
+    right: 20px; 
+    z-index: 999;
+    display: flex; 
+    flex-direction: column; 
+    border-radius: 12px;
+    overflow: visible; /* Changed from hidden to visible */
+    /* Removed box-shadow */
+    animation: badgePulse 3s ease-in-out infinite;
+    min-width: 160px;
+    background: transparent; /* Added transparent background */
+}
         
         @keyframes badgePulse {
             0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
             50% { transform: scale(1.08); box-shadow: 0 15px 50px rgba(0,0,0,0.6); }
         }
         
-        .white-strip { 
-            background:white; 
-            
-            font-weight: 700;
-            font-size: 1rem; 
-            padding: 12px 18px; 
-            text-align: center;
-            border-bottom: 2px solid #FF9800;
-            letter-spacing: 0.5px;
-        }
+      .white-strip { 
+    background: transparent; /* Changed from white to transparent */
+    font-weight: 700;
+    font-size: 0.9rem; /* Reduced from 1rem */
+    padding: 8px 12px; /* Reduced padding */
+    text-align: center;
+    border: none; /* Removed border */
+    letter-spacing: 0.5px;
+    color: #2c3e50; /* Added text color for visibility */
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8), 
+                 -1px -1px 2px rgba(255,255,255,0.8); /* Added text shadow for readability */
+}
         
         .back-home-btn {
             position: fixed; top: 100px; left: 20px; z-index: 999;
@@ -767,6 +776,16 @@
         }
         
         @media (max-width: 575px) {
+ .tricolor-badge {
+        top: 20px;
+        right: 20px;
+        min-width: 120px; /* Reduced from 140px */
+    }
+    
+    .white-strip {
+        font-size: 0.75rem; /* Further reduced for mobile */
+        padding: 6px 8px; /* Reduced padding for mobile */
+    }
             .login-modal {
                 padding: 10px;
                 align-items: flex-start;
@@ -918,8 +937,20 @@
             }
         }
         
-        /* Very small phones (max 360px) */
-        @media (max-width: 360px) {
+        /* Very small phones (max 360px) */@media (max-width: 360px) {
+    /* ... other styles ... */
+    
+    .tricolor-badge {
+        min-width: 100px; /* Further reduced */
+        top: 15px;
+        right: 15px;
+    }
+    
+    .white-strip {
+        font-size: 0.7rem; /* Smallest size for tiny screens */
+        padding: 5px 6px;
+    }
+}
 /* Small mobile phones (401px - 575px) */
 @media (max-width: 575px) and (min-width: 401px) {
     .login-header h1 {
@@ -1605,3 +1636,4 @@ function setupSections() {
     </script>
 </body>
 </html>
+
