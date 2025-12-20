@@ -7,7 +7,6 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Enhanced gradient with better color transitions */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #FF9800 0%, #FFFFFF 25%, #4CAF50 60%, #FF9800 100%);
@@ -24,7 +23,6 @@
             50% { background-position: 100% 50%; }
         }
         
-        /* Enhanced tricolor badge with better visibility */
         .tricolor-badge {
             position: fixed; top: 100px; right: 20px; z-index: 999;
             display: flex; flex-direction: column; border-radius: 12px;
@@ -38,7 +36,6 @@
             50% { transform: scale(1.08); box-shadow: 0 15px 50px rgba(0,0,0,0.6); }
         }
         
-        /* Enhanced white strip with better readability */
         .white-strip { 
             background: white; 
             color: #2c3e50; 
@@ -50,7 +47,6 @@
             letter-spacing: 0.5px;
         }
         
-        /* Enhanced back home button with better visibility */
         .back-home-btn {
             position: fixed; top: 100px; left: 20px; z-index: 999;
             background: linear-gradient(135deg, #FF9800 0%, #F4511E 100%);
@@ -68,7 +64,38 @@
             filter: brightness(1.1);
         }
         
-        /* Enhanced login modal with better shadows and transitions */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FF9800 0%, #F4511E 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(244,81,30,0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(244,81,30,0.6);
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
         .login-modal {
             display: flex; position: fixed; z-index: 2000;
             left: 0; top: 0; width: 100%; height: 100%;
@@ -77,19 +104,25 @@
             animation: gradientShift 10s ease infinite;
             align-items: center; justify-content: center;
             backdrop-filter: blur(4px);
+            overflow-y: auto;
+            padding: 20px 10px;
         }
         
-        /* Enhanced login container with better card design */
         .login-container {
             background: white; padding: 45px 35px; border-radius: 22px;
             width: 95%; max-width: 650px; 
             box-shadow: 0 30px 60px rgba(0,0,0,0.35);
             animation: loginSlideIn 0.8s cubic-bezier(0.25,0.8,0.25,1);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            margin: auto;
         }
         
-        /* Enhanced login header with better typography */
+        @keyframes loginSlideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .login-header { 
             text-align: center; margin-bottom: 35px; 
             position: relative;
@@ -111,8 +144,8 @@
             font-size: 2.8rem;
             background: linear-gradient(135deg, #FF9800 0%, #4CAF50 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
-            text-shadow: 0 2px 0 rgba(255,255,255,0.3);
         }
         
         .login-header p { 
@@ -121,10 +154,9 @@
             font-weight: 600;
         }
         
-        /* Enhanced logo showcase with better spacing */
         .logo-showcase {
             display: flex; justify-content: center; align-items: center;
-            gap: 45px; margin: 35px 0 30px;
+            gap: 40px; margin: 35px 0 30px;
             flex-wrap: wrap;
         }
         
@@ -146,7 +178,6 @@
             50% { transform: translateY(-5px); }
         }
         
-        /* Enhanced role selection grid with better responsiveness */
         .role-selection-grid {
             display: grid; 
             grid-template-columns: repeat(2, 1fr);
@@ -154,7 +185,6 @@
             margin-bottom: 25px;
         }
         
-        /* Enhanced role cards with better visual hierarchy */
         .role-card {
             padding: 22px 18px; 
             border: 3px solid #e0e0e0; 
@@ -217,7 +247,6 @@
             letter-spacing: 1px;
         }
         
-        /* Enhanced credentials container with better styling */
         .credentials-container { 
             display: none; 
             margin: 25px 0; 
@@ -256,7 +285,6 @@
             transform: translateY(-2px);
         }
         
-        /* Enhanced error message with better visibility */
         .error-message {
             background: #ffebee;
             color: #c62828; 
@@ -270,7 +298,6 @@
             box-shadow: 0 4px 12px rgba(198,40,40,0.2);
         }
         
-        /* Enhanced submit button with better styling */
         .submit-button {
             width: 100%; 
             padding: 16px;
@@ -293,7 +320,6 @@
             filter: brightness(1.05);
         }
         
-        /* Enhanced main container with better card styling */
         .container {
             max-width: 1200px; 
             margin: 0 auto; 
@@ -309,7 +335,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Enhanced header with better visual hierarchy */
         .header {
             background: linear-gradient(135deg, #FF9800 0%, #FFFFFF 45%, #4CAF50 100%);
             color: #2c3e50; 
@@ -375,7 +400,6 @@
             opacity: 0.9;
         }
         
-        /* Enhanced Aadhaar ID section */
         .aadhar-id {
             background: linear-gradient(135deg, #fff3e0 0%, #e8f5e8 100%);
             padding: 16px; 
@@ -436,12 +460,10 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.25);
         }
         
-        /* Enhanced content section */
         .content { 
             padding: 18px; 
         }
         
-        /* Enhanced sections with better visual hierarchy */
         .section {
             margin-bottom: 22px;
             background: linear-gradient(135deg, #fff8f0 0%, #f0fff0 100%);
@@ -515,14 +537,12 @@
             padding: 12px 0 0 0;
         }
         
-        /* Enhanced info grid with better responsiveness */
         .info-grid { 
             display: grid; 
             grid-template-columns: 1fr; 
             gap: 12px; 
         }
         
-        /* Enhanced info items with better styling */
         .info-item {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 12px; 
@@ -563,7 +583,6 @@
             font-size: 0.95rem;
         }
         
-        /* Enhanced material composition section */
         .material-composition {
             background: #f5f7fb; 
             padding: 14px; 
@@ -612,7 +631,6 @@
             font-size: 0.9rem;
         }
         
-        /* Enhanced footer with better styling */
         .footer {
             background: linear-gradient(135deg, #2c3e50 0%, #FF9800 45%, #4CAF50 100%);
             color: white; 
@@ -630,7 +648,6 @@
             background: linear-gradient(90deg, #2c3e50, #4CAF50, #FF9800);
         }
         
-        /* Enhanced access note */
         .access-note {
             background: #fff8e1; 
             border-left: 5px solid #FFB300;
@@ -643,20 +660,12 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        /* Enhanced hidden role class */
         .hidden-for-role { 
             display: none !important; 
-            animation: fadeOut 0.3s ease;
         }
         
-        @keyframes fadeOut {
-            from { opacity: 1; transform: scale(1); }
-            to { opacity: 0; transform: scale(0.9); }
-        }
+        /* RESPONSIVE DESIGN */
         
-        /* RESPONSIVE DESIGN IMPROVEMENTS */
-        
-        /* Desktop (1200px and up) */
         @media (min-width: 1200px) {
             .container {
                 max-width: 1300px;
@@ -684,7 +693,6 @@
             }
         }
         
-        /* Large tablets (992px and up) */
         @media (min-width: 992px) {
             .info-grid { 
                 grid-template-columns: repeat(2, 1fr); 
@@ -701,7 +709,6 @@
             }
         }
         
-        /* Medium tablets (768px and up) */
         @media (min-width: 768px) {
             .role-selection-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -727,7 +734,6 @@
             }
         }
         
-        /* Small tablets and large phones (576px and up) */
         @media (min-width: 576px) {
             .login-container {
                 width: 98%;
@@ -760,45 +766,77 @@
             }
         }
         
-        /* Mobile phones (max 575px) */
         @media (max-width: 575px) {
+            .login-modal {
+                padding: 10px;
+                align-items: flex-start;
+            }
+            
             .login-container {
                 width: 100%;
-                padding: 30px 20px;
+                padding: 25px 15px;
                 border-radius: 18px;
+                margin: 10px 0;
+            }
+            
+            .login-header {
+                margin-bottom: 20px;
+            }
+            
+            .login-header h1 {
+                font-size: 2rem;
+            }
+            
+            .login-header p {
+                font-size: 0.95rem;
+            }
+            
+            .logo-showcase {
+                gap: 20px;
+                margin: 20px 0 15px;
+            }
+            
+            .logo-showcase img {
+                height: 50px;
             }
             
             .role-selection-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 10px;
+                margin-bottom: 20px;
             }
             
             .role-card {
-                padding: 18px 14px;
+                padding: 16px 12px;
             }
             
             .role-icon {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
+                font-size: 2.2rem;
+                margin-bottom: 8px;
             }
             
             .role-name {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             
-            .logo-showcase {
-                gap: 30px;
+            .credentials-container {
+                padding: 15px;
+                margin: 15px 0;
             }
             
-            .logo-showcase img {
-                height: 60px;
+            .credentials-container label {
+                font-size: 0.95rem;
+                margin-bottom: 8px;
             }
             
-            .login-header h1 {
-                font-size: 2.2rem;
+            .credentials-container input {
+                font-size: 0.95rem;
+                padding: 12px;
+                margin-bottom: 12px;
             }
             
-            .login-header p {
+            .submit-button {
+                padding: 14px;
                 font-size: 1rem;
             }
             
@@ -809,7 +847,15 @@
             .header .subtitle {
                 font-size: 0.95rem;
             }
-            
+            .logo-row {
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 70px;
+    height: 45px;
+}
             .aadhar-id {
                 margin: 12px;
                 padding: 12px;
@@ -874,6 +920,100 @@
         
         /* Very small phones (max 360px) */
         @media (max-width: 360px) {
+/* Small mobile phones (401px - 575px) */
+@media (max-width: 575px) and (min-width: 401px) {
+    .login-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .logo-showcase img {
+        height: 55px;
+    }
+}
+
+/* Very small phones (max 400px) */
+@media (max-width: 400px) {
+    .login-modal {
+        padding: 5px;
+    }
+    
+    .login-container {
+        padding: 20px 12px;
+        width: 98%;
+        margin: 5px 0;
+    }
+    
+    .login-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .login-header p {
+        font-size: 0.9rem;
+    }
+    
+    .login-header::after {
+        width: 40px;
+        height: 2px;
+    }
+    
+    .logo-showcase {
+        gap: 15px;
+        margin: 15px 0 10px;
+    }
+    
+    .logo-showcase img {
+        height: 45px;
+    }
+    
+    .role-selection-grid {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .role-card {
+        padding: 14px 10px;
+    }
+    
+    .role-icon {
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+    
+    .role-name {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .credentials-container {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .credentials-container label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .credentials-container input {
+        font-size: 0.9rem;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .submit-button {
+        padding: 12px;
+        font-size: 0.95rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .error-message {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}
+
+/* Very small phones (max 360px) */
+@media (max-width: 360px) {
             .login-container {
                 padding: 25px 15px;
             }
@@ -970,6 +1110,50 @@
                 box-shadow: none;
             }
         }
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #FF9800 0%, #F4511E 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(244,81,30,0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(244,81,30,0.6);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 575px) {
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -1018,7 +1202,9 @@
             
             <button class="submit-button" id="submitButton">Access Battery Aadhaar</button>
         </div>
-    </div>
+  </div>
+
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
 
     <button class="back-home-btn" id="backHomeBtn">🏠 Back to Home</button>
 
@@ -1204,10 +1390,10 @@
         let currentRole = null;
         
         const credentials = {
-            recycler: { userId: 'REC001', password: 'ARAI01' },
-            manufacturer: { userId: 'MFG001', password: 'ARAI02' },
-            regulatory: { userId: 'REG001', password: 'ARAI03' },
-            service: { userId: 'SVC001', password: 'ARAI04' }
+            recycler: { userId: 'R', password: 'A' },
+            manufacturer: { userId: 'M', password: 'R' },
+            regulatory: { userId: 'R', password: 'A' },
+            service: { userId: 'S', password: 'I' }
         };
 
         const roleNames = {
@@ -1277,11 +1463,10 @@
             }
         });
 
-        // Enhanced back to home button with confirmation
-        document.getElementById('backHomeBtn').addEventListener('click', function() {
-           {
+       // Enhanced back to home button with confirmation
+     document.getElementById('backHomeBtn').addEventListener('click',function() {
                 resetApp();
-            }
+            
         });
 
         // Enhanced app initialization with smooth transitions
@@ -1305,20 +1490,25 @@
             });
         }
 
-        function initializeApp() {
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('mainContainer').style.display = 'block';
-            document.getElementById('backHomeBtn').style.display = 'block';
-            
-            const badge = document.getElementById('tricolorBadge');
-            const badgeText = document.getElementById('badgeText');
-            badge.style.display = 'flex';
-            badgeText.textContent = roleNames[currentRole];
-            
-            applyRoleBasedAccess();
-            setupSections();
-            setupAadhaarToggle();
-        }
+     function initializeApp() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('mainContainer').style.display = 'block';
+    document.getElementById('backHomeBtn').style.display = 'block';
+    
+    const badge = document.getElementById('tricolorBadge');
+    const badgeText = document.getElementById('badgeText');
+    badge.style.display = 'flex';
+    badgeText.textContent = roleNames[currentRole];
+    
+    // Apply role-based access FIRST, then setup sections
+    applyRoleBasedAccess();
+    
+    // Use setTimeout to ensure DOM is updated before setting up sections
+    setTimeout(() => {
+        setupSections();
+        setupAadhaarToggle();
+    }, 50);
+}
 
         function applyRoleBasedAccess() {
             document.querySelectorAll('.section, .info-item, .material-composition, .access-note').forEach(el => {
@@ -1342,32 +1532,33 @@
             });
         }
 
-        function setupSections() {
-            const sections = document.querySelectorAll('.section:not(.hidden-for-role)');
+function setupSections() {
+    // Remove all existing event listeners by cloning
+    const sections = document.querySelectorAll('.section:not(.hidden-for-role)');
+    
+    sections.forEach(section => {
+        const header = section.querySelector('h3');
+        
+        // Remove old listener by cloning the header
+        const newHeader = header.cloneNode(true);
+        header.parentNode.replaceChild(newHeader, header);
+        
+        // Add new event listener
+        newHeader.addEventListener('click', function(e) {
+            e.stopPropagation();
             
-            sections.forEach(section => {
-                const header = section.querySelector('h3');
-                
-                header.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    sections.forEach(otherSection => {
-                        if (otherSection !== section) {
-                            otherSection.classList.remove('open');
-                        }
-                    });
-                    section.classList.toggle('open');
-                });
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.section')) {
-                    sections.forEach(section => {
-                        section.classList.remove('open');
-                    });
+            // Close all other sections
+            sections.forEach(otherSection => {
+                if (otherSection !== section) {
+                    otherSection.classList.remove('open');
                 }
             });
-        }
-
+            
+            // Toggle current section
+            section.classList.toggle('open');
+        });
+    });
+}
         function setupAadhaarToggle() {
             const aadhaarNumber = document.querySelector('.aadhaar-number');
             const toggle = document.querySelector('.toggle-visibility');
@@ -1386,13 +1577,31 @@
 
         // Enhanced console logging with better formatting
         console.log('%c=== BATTERY AADHAAR LOGIN CREDENTIALS ===', 'color: #FF9800; font-weight: bold; font-size: 14px;');
-        console.log('%cRECYCLER:', 'color: #FF9800; font-weight: bold;', 'UserID=REC001, Password=ARAI01');
-        console.log('%cMANUFACTURER:', 'color: #4CAF50; font-weight: bold;', 'UserID=MFG001, Password=ARAI02');
-        console.log('%cREGULATORY:', 'color: #2196F3; font-weight: bold;', 'UserID=REG001, Password=ARAI03');
-        console.log('%cSERVICE:', 'color: #9C27B0; font-weight: bold;', 'UserID=SVC001, Password=ARAI04');
-        console.log('%cUSER:', 'color: #607D8B; font-weight: bold;', 'No credentials needed - click USER card to login');
+        console.log('%cRECYCLER:', 'color: #FF9800; font-weight: bold;', 'UserID=R, Password=A');
+        console.log('%cMANUFACTURER:', 'color: #4CAF50; font-weight: bold;', 'UserID=M, Password=R');
+        console.log('%cREGULATORY:', 'color: #2196F3; font-weight: bold;', 'UserID=R, Password=A');
+        console.log('%cSERVICE:', 'color: #9C27B0; font-weight: bold;', 'UserID=S, Password=I');
+       console.log('%cUSER:', 'color: #607D8B; font-weight: bold;', 'No credentials needed - click USER card to login');
+        
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const loginModal = document.getElementById('loginModal');
+
+        window.addEventListener('scroll', function() {
+            // Only show scroll button when not on login modal and scrolled down
+            if (loginModal.style.display === 'none' && window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
-
-
