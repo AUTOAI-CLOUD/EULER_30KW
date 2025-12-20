@@ -28,32 +28,52 @@
     top: 100px; 
     right: 20px; 
     z-index: 999;
-    display: flex; 
-    flex-direction: column; 
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.35);
-    animation: badgePulse 3s ease-in-out infinite;
-    min-width: 160px;
-    background: rgba(44, 62, 80, 0.95); /* Dark background */
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 152, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(220, 38, 38, 0.95); /* Red background like LIVE */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+    animation: livePulse 2s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+@keyframes livePulse {
+    0%, 100% { 
+        box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 4px 16px rgba(220, 38, 38, 0.8);
+        transform: scale(1.02);
+    }
+}
 .white-strip { 
-    background: linear-gradient(135deg, 
-                rgba(255, 152, 0, 0.25) 0%, 
-                rgba(76, 175, 80, 0.25) 100%);
-    font-weight: 800;
-    font-size: 0.85rem;
-    padding: 10px 16px;
+    background: transparent;
+    font-weight: 700;
+    font-size: 0.7rem; /* Reduced size */
+    padding: 0;
+    margin: 0;
     text-align: center;
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, #FF9800, #4CAF50) 1;
-    letter-spacing: 1px;
-    color: #FFFFFF; /* White text */
+    color: #FFFFFF;
     text-transform: uppercase;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.2px;
+    line-height: 1;
+}
+
+/* Add a pulsing red dot before the text (optional) */
+.white-strip::before {
+    content: '●';
+    color: #FFFFFF;
+    font-size: 0.6rem;
+    animation: dotPulse 1.5s ease-in-out infinite;
+    margin-right: 4px;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
         
         .back-home-btn {
@@ -779,15 +799,18 @@
   .tricolor-badge {
         top: 15px;
         right: 15px;
-        min-width: 110px;
-        border-radius: 16px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+        padding: 5px 10px;
+        gap: 4px;
     }
     
     .white-strip {
-        font-size: 0.7rem;
-        padding: 8px 12px;
-        letter-spacing: 0.8px;
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .white-strip::before {
+        font-size: 0.5rem;
+        margin-right: 3px;
     }
             .login-modal {
                 padding: 10px;
@@ -970,14 +993,18 @@
     .tricolor-badge {
         top: 12px;
         right: 12px;
-        min-width: 95px;
-        border-radius: 14px;
+        padding: 4px 8px;
+        gap: 3px;
     }
     
     .white-strip {
-        font-size: 0.65rem;
-        padding: 7px 10px;
-        letter-spacing: 0.6px;
+        font-size: 0.55rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .white-strip::before {
+        font-size: 0.45rem;
+        margin-right: 2px;
     }
     .login-modal {
         padding: 5px;
@@ -1060,19 +1087,20 @@
 
 /* Very small phones (max 360px) */
 @media (max-width: 360px) {
-    .tricolor-badge {
-        min-width: 90px;
+        .tricolor-badge {
         top: 10px;
         right: 10px;
-        border-radius: 12px;
+        padding: 4px 8px;
     }
     
     .white-strip {
-        font-size: 0.6rem;
-        padding: 6px 8px;
-        letter-spacing: 0.5px;
+        font-size: 0.5rem;
+        letter-spacing: 0.6px;
     }
-            .login-container {
+    
+    .white-strip::before {
+        font-size: 0.4rem;
+    }    .login-container {
                 padding: 25px 15px;
             }
             
