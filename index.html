@@ -1495,28 +1495,49 @@
             service: 'SERVICE PROVIDER'
         };
 
-        // Enhanced role card selection with better feedback
-        document.querySelectorAll('.role-card').forEach(card => {
-            card.addEventListener('click', function() {
-                document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                currentRole = this.dataset.role;
-                
-                const credentialsContainer = document.getElementById('credentialsContainer');
-                const errorMessage = document.getElementById('errorMessage');
-                
-                if (currentRole === 'user') {
-                    credentialsContainer.style.display = 'none';
-                    errorMessage.style.display = 'none';
-                    initializeApp();
-                } else {
-                    credentialsContainer.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    document.getElementById('userIdInput').value = '';
-                    document.getElementById('passwordInput').value = '';
-                }
-            });
+      // Auto-scroll to credentials function
+function scrollToCredentials() {
+    const credentialsContainer = document.getElementById('credentialsContainer');
+    const userIdInput = document.getElementById('userIdInput');
+    
+    // Wait a moment for container to display, then scroll
+    setTimeout(() => {
+        credentialsContainer.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
         });
+        
+        // Focus on User ID input after scroll
+        setTimeout(() => {
+            userIdInput.focus();
+        }, 500);
+    }, 100);
+}
+        // Enhanced role card selection with better feedback
+       document.querySelectorAll('.role-card').forEach(card => {
+    card.addEventListener('click', function() {
+        document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+        currentRole = this.dataset.role;
+        
+        const credentialsContainer = document.getElementById('credentialsContainer');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        if (currentRole === 'user') {
+            credentialsContainer.style.display = 'none';
+            errorMessage.style.display = 'none';
+            initializeApp();
+        } else {
+            credentialsContainer.style.display = 'block';
+            errorMessage.style.display = 'none';
+            document.getElementById('userIdInput').value = '';
+            document.getElementById('passwordInput').value = '';
+            
+            // ADD THIS LINE ONLY - Auto-scroll to credentials
+            scrollToCredentials();
+        }
+    });
+});
 
         // Enhanced submit button with better validation
         document.getElementById('submitButton').addEventListener('click', function() {
@@ -1696,4 +1717,5 @@ function setupSections() {
     </script>
 </body>
 </html>
+
 
