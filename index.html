@@ -1373,7 +1373,7 @@
             </div>
 
             <!-- BMCS - Hidden for USER, Limited for SERVICE -->
-            <div class="section" data-section="bmcs" data-roles="recycler,manufacturer,regulatory,service">
+            <div class="section" data-section="bmcs" data-roles="user,recycler,manufacturer,regulatory,service">
                 <h3>🧪 Battery Material Composition Section (BMCS)
                     <span class="arrow"><svg width="18" height="18" viewBox="0 0 20 20"><polyline points="6 8 10 12 14 8" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </h3>
@@ -1383,7 +1383,7 @@
                         <div class="info-item"><strong>Number of cells per battery:</strong><span>96 Cells</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Type of construction of battery pack:</strong><span>Cell-to-Module-to-Pack (CTMTP)</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Type of construction of Module:</strong><span>Series</span></div>
-                        <div class="info-item" data-roles="service"><strong>Usable Power capability between 80% & 20% SoC:</strong><span>60%</span></div>
+                        <div class="info-item" data-roles="service,user"><strong>Usable Power capability between 80% & 20% SoC:</strong><span>60%</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Original power capability at 80% SoC:</strong><span>24 kWh</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Original power capability at 20% SoC:</strong><span>6 kWh</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Usable Power capability between 80% & 20% SoC:</strong><span>60%</span></div>
@@ -1443,7 +1443,7 @@
                     <div class="info-grid">
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>BMI + BIS:</strong><span>MY008 1DH800001</span></div>
                         <div class="info-item" data-roles="service,recycler,manufacturer,regulatory"><strong>Battery Category:</strong><span>Electric Vehicle battery</span></div>
-                        <div class="info-item" data-roles="service,recycler,manufacturer,regulatory"><strong>Battery Status:</strong><span>Operational</span></div>
+                        <div class="info-item" data-roles="user,service,recycler,manufacturer,regulatory"><strong>Battery Status:</strong><span>Operational</span></div>
                         <div class="info-item" data-roles="service,recycler,manufacturer,regulatory"><strong>State of Health (SOH):</strong><span>80%</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Actual Disassembly Method:</strong><span>Standard Manual Disassembly & Full Separation</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Actual Circularity Method:</strong><span>Material Circularity Indicator (MCI)</span></div>
@@ -1451,7 +1451,7 @@
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Reserved Field 1 (for future use):</strong><span>-</span></div>
                         <div class="info-item" data-roles="recycler,manufacturer,regulatory"><strong>Reserved Field 2 (for future use):</strong><span>-</span></div>
                     </div>
-                    <div class="info-item" onclick="window.open('https://autoai-cloud.github.io/Dynamic_30/', '_blank')" style="cursor: pointer; margin-top: 16px;" data-roles="recycler,manufacturer,regulatory,service">
+                    <div class="info-item" onclick="window.open('https://autoai-cloud.github.io/dynamic_data/', '_blank')" style="cursor: pointer; margin-top: 16px;" data-roles="recycler,manufacturer,regulatory,service">
                         <strong>🔗 Real-Time Battery Monitoring (Full Access)</strong>
                         <span>Click to view live battery performance data, health status and all dynamic parameters</span>
                     </div>
@@ -1465,6 +1465,7 @@
                 </h3>
                 <div class="section-content">
                     <div class="access-note">
+<div class="info-item" data-roles="user"><strong>Battery Status:</strong><span>Operational</span></div>
                         ⚠️ <strong>User Access Level:</strong> You have limited access to battery information. Material composition and dynamic data sections are not available for your role. For full access, contact your system administrator or request elevated permissions.
                     </div>
                 </div>
@@ -1717,5 +1718,6 @@ function setupSections() {
     </script>
 </body>
 </html>
+
 
 
