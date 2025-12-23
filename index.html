@@ -1482,10 +1482,10 @@
         let currentRole = null;
         
         const credentials = {
-            recycler: { userId: 'R', password: 'A' },
-            manufacturer: { userId: 'M', password: 'R' },
-            regulatory: { userId: 'R', password: 'A' },
-            service: { userId: 'S', password: 'I' }
+            recycler: { userId: 'R', password: 'R' },
+            manufacturer: { userId: 'M', password: 'M' },
+            regulatory: { userId: 'R', password: 'R' },
+            service: { userId: 'S', password: 'S' }
         };
 
         const roleNames = {
@@ -1690,10 +1690,10 @@ function setupSections() {
 
         // Enhanced console logging with better formatting
         console.log('%c=== BATTERY AADHAAR LOGIN CREDENTIALS ===', 'color: #FF9800; font-weight: bold; font-size: 14px;');
-        console.log('%cRECYCLER:', 'color: #FF9800; font-weight: bold;', 'UserID=R, Password=A');
-        console.log('%cMANUFACTURER:', 'color: #4CAF50; font-weight: bold;', 'UserID=M, Password=R');
-        console.log('%cREGULATORY:', 'color: #2196F3; font-weight: bold;', 'UserID=R, Password=A');
-        console.log('%cSERVICE:', 'color: #9C27B0; font-weight: bold;', 'UserID=S, Password=I');
+        console.log('%cRECYCLER:', 'color: #FF9800; font-weight: bold;', 'UserID=R, Password=R');
+        console.log('%cMANUFACTURER:', 'color: #4CAF50; font-weight: bold;', 'UserID=M, Password=M');
+        console.log('%cREGULATORY:', 'color: #2196F3; font-weight: bold;', 'UserID=R, Password=R');
+        console.log('%cSERVICE:', 'color: #9C27B0; font-weight: bold;', 'UserID=S, Password=S');
        console.log('%cUSER:', 'color: #607D8B; font-weight: bold;', 'No credentials needed - click USER card to login');
         
         // Scroll to top functionality
@@ -1718,6 +1718,7 @@ function setupSections() {
     </script>
 </body>
 </html>
+
 
 
 
